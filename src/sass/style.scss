@@ -24,302 +24,77 @@ body {
 	margin: 0;
 }
 
-aside.menu {
-	width: 100%;
-	height: 100vh;
-	background-color: rgba(0,0,0,0.45);
-	position: fixed;
-	right: 100%;
-	border: 2px solid red;
-	transition: 0.5s;
-	z-index: 10;
-	backdrop-filter: blur(5px);
-	&.active {
-		right: 0;
-	}
-	ul {
-		height: 100vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		li {
-			user-select: none;
-			color: rgba(255,255,255,0.8);
-			list-style: none;
-			margin: 10px 0;
-			font-size: 24px;
-			font-family: Jingleberry;
-			&:hover {
-				text-shadow: 1px 1px 3px white;
-			}
-			&:active {
-				transform: translateY(1px);
-				text-shadow: 1px 1px 3px black;
-				cursor: pointer;
-			}
-		}
-	}
-}
-
-aside.support {
-	transition: 0.3s ease-in-out;
-	width: 100%;
-	height: 100vh;
-	background-color: rgba(35,255,255,0.3);
-	backdrop-filter: blur(5px);
-	position: fixed;
-	z-index: 2;
-	top: 0;
-	right: -100%;
-	color: white;
-	text-shadow: 1px 1px 13px black;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	//justify-content: center;
-	&.active {
-		right: 0;
-		z-index: 10;
-	}
-	h2 {
-		text-align: center;
-		margin: 70px 0 20px;
-	}
-	.support_checkboxes {
-		width: 70%;
-		display: flex;
-		justify-content: space-around;
-		//border: 1px solid red;
-		.support_checkbox {
-			padding: 10px 0;
-			//border: 1px solid gold;
-			text-align: center;
-		}
-	}
-	
-}
-
-header {
-	position: fixed;
-	z-index: 10;
-	width: 100%;
-	height: 50px;
-	display: flex;
-	align-items: center;
-	background-color: rgba(255,255,255,0.5);
-	box-shadow: 0 0 8px 0 black;
-	transition: 0.5s ease-in-out;
-	div.hamburger {
-		cursor: pointer;
-		width: 40px;
-		height: 30px;
-		margin-left: 10px;
-		display: flex;
-		align-items: center;
-		position: relative;
-		z-index: 100;
-		&:before,
-		&:after {
-			transition: 0.2s ease-in-out;
-			content: '';
-			position: absolute;
-			width: 100%;
-			height: 2px;
-			background-color: black;
-			transform-origin: 0 0;
-		}
-		&:before {
-			top: 0;
-			//transform: rotate(45deg);
-		}
-		&:after {
-			bottom: 0;
-			//transform: rotate(-45deg);
-		}
-		span {
-			width: 100%;
-			height: 2px;
-			background-color: black;
-		}
-	}
-	div.hamburger.active {
-		&:before {
-			transform: rotate(45deg);
-			background-color: white;
-		}
-		&:after {
-			transform: rotate(-45deg);
-			background-color: white;
-		}
-		span {
-			opacity: 0;
-		}
-	}
-	div.logo_text {
-		margin: 0 auto;
-		text-transform: uppercase;
-		text-align: center;
-		//font-family: Jersey Sharp;
-		font-size: calc(10px + 2vmin);
-	}
-	div.support_icon {
-		z-index: 100;
-		width: 45px;
-		height: 45px;
-		margin-right: 10px;
-		img {
-			max-width: 100%;
-		}
-	}
-}
-
-
 .wrapper {
-	//border: 2px solid red;
 	max-width: 1200px;
+	height: 100vh;
 	margin: auto;
-	box-shadow: 0 0 18px 1px black;
-	//display: flex;
-	//align-items: center;
-	//justify-content: center;
-	main {
-		width: 100%;
-		height: 100vh;
-		background-blend-mode: multiply;
-		background: url('img/girl.jpg') no-repeat 50% 50%;
-		background-size: cover;
-		background-attachment: fixed;
-		background-color: rgba(0,0,0,0.24);
-		position: relative;
-		//display: flex;
-		align-items: center;
-		h2.welcome_h2,
-		h3.welcome_h3 {
-			color: white;
-			text-shadow: 0 0 3px black;
-			font-size: 24px;
-		}
-		h2.welcome_h2 {
-			position: absolute;
-			top: 15%;
-			right: 5%;
-			opacity: 0;
-			transition: 1s ease-in-out;
-		}
-		h3.welcome_h3 {
-			position: absolute;
-			bottom: 10px;
-			right: 5%;
-			//transform: rotate(25deg);
-			color: rgba(235,235,235,0.8);
-			text-shadow: 1px 1px 13px black;
-			text-align: right;
-			background-color: rgba(255,255,255,0.2);
-			padding: 5px 15px;
-			border-radius: 5px;
-			opacity: 0;
-			transition: 0.6s ease-in-out;
-
-		}
-	}
-
-
-	section.goods{
-		div.shop_section {
-			div.shop_item {
-				max-width: 45%;
-			}
-		}
-	}
-
-
-
-
-	section.goods {
-		background-color: lightyellow;
-		width: 100%;
-		height: 100vh;
-		div.shop_section {
-			display: flex;
-			justify-content: space-around;
-			flex-wrap: wrap;
+	box-shadow: 0 0 30px 1px rgba(0,0,0,0.4);
+	header.page-header {
+		position: fixed;
+		transition: 0.4s;
 			width: 100%;
-			//height: 100%;
-			background-color: green;
-			padding-top: 20px;
-			div.shop_item {
-				margin: 10px;
-				width: 300px;
-				height: 300px;;
-				border: 2px solid red;
+			height: 80px;
+			display: flex;
+			align-items: center;
+			background-color: rgba(135, 206, 250,0.4);
+			box-shadow: 0 0 5px 1px black inset;
+			div.logo {
+				width: 70px;
+				height: 70px;
+				margin-left: 5px;
+				border: 2px solid white;
 				border-radius: 10px;
+			}
+			nav.navigation {
+				//border: 2px solid white;
+				padding: 10px;
+				height: 100%;
+				margin-left: auto;
+				width: calc(100% - 80px);
+				display: flex;
+				justify-content: flex-end;
+				align-items: flex-end;
+				ul.navigation-list {
+					display: flex;
+					//border: 2px solid red;
+					padding: 0;
+					li.navigation-item {
+						//min-width: 50px;
+						//border: 2px solid black;
+						font-size: calc(7px + 2vmin);
+						list-style: none;
+						margin: 0 5px;
+						//border: 2px solid red;
+						display: flex;
+						align-items: center;
+						transition: 0.3s;
+						&:hover {
+							text-shadow: 1px 1px 10px black;
+						}
+						a {
+							text-decoration: none;
+							color: white;
+						}
+					}
+				}
 			}
 		}
 	}
-}
-
-
-
-/*    БРЕЙКПОИНТЫ ДЛЯ ПЛАНШЕТОВ И МОБ. УСТРОЙСТВ      */
-
-/* Large desktops and laptops */
-@media (min-width: 1200px) {
-
-}
-
-/* Landscape tablets and medium desktops */
-@media (min-width: 992px) and (max-width: 1199px) {
-
-}
-
-/* Portrait tablets and small desktops */
-@media (min-width: 768px) and (max-width: 991px) {
-
-}
-
-/* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
-
-}
-
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
-	h2.welcome_h2 {
-		font-size: 24px !important;
-	}
-	aside.support .support_checkboxes {
-		flex-direction: column;
-		.support_checkbox {
-			margin: 5px 0;
-			background-color: rgba(35,35,35,0.3);
-			border-radius: 10px;
-		}
-	}
-}
-
-/* Iphone 5 */
-@media (max-width: 320px) {
 	main {
-		background-size: 200%;
-		height: 70vh;
-		box-shadow: 1px 1px 30px 10px rgba(0,0,0,0.5);
+		width: 100%;
+		height: 100vh;
+		background: url('/css/img/bg.jpg') left 50% no-repeat;
+		background-size: cover;
+		border: 2px solid black;
+		background-attachment: fixed;
 	}
-	section.goods {
-		div.shop_section {
-			div.shop_item {
-				border-color: yellow;
-			}
+	footer.page-footer {
+		width: 100%;
+		height: 200px;
+		background-color: lightgrey;
+		h2 {
+			text-align: center;
+			font-size: 40px;
+			padding: 40px;
 		}
 	}
-	aside.support {
-		.support_checkboxes {
-			flex-direction: column;
-			.support_checkbox {
-				margin: 5px 0;
-				background-color: rgba(35,35,35,0.3);
-				border-radius: 10px;
-			}
-		}
-	}
-}
